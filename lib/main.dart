@@ -40,7 +40,7 @@ class Day {
   final DateTime fajr, sunrise, dhuhr, asr, maghrib, isha;
   Day(this.fajr, this.sunrise, this.dhuhr, this.asr, this.maghrib, this.isha);
   factory Day.of(DateTime date) {
-    final p = CalculationMethod.karachi();
+    final p = CalculationMethodParameters.karachi();
     p.madhab = Madhab.hanafi;
     final t = PrayerTimes(coordinates: Coordinates(kLat, kLng), date: date, calculationParameters: p, precision: true);
     return Day(t.fajr, t.sunrise, t.dhuhr, t.asr, t.maghrib, t.isha);
